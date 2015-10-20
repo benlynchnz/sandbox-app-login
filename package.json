@@ -1,5 +1,6 @@
 {
   "name": "sandbox-app-login",
+  "s3URI": "login",
   "version": "0.0.1",
   "description": "test",
   "main": "index.js",
@@ -33,6 +34,7 @@
     "extract-text-webpack-plugin": "^0.8.2",
     "gulp": "^3.9.0",
     "gulp-awspublish": "^3.0.1",
+    "gulp-rename": "^1.2.2",
     "gulp-watch": "^4.3.5",
     "gulp-webpack": "^1.5.0",
     "mocha": "^2.3.3",

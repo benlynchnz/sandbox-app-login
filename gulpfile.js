@@ -6,6 +6,7 @@ var st = require("st");
 var path = require("path");
 var s3 = require("gulp-awspublish");
 var config = require("./package.json");
+var rename = require("gulp-rename");
 
 gulp.task("deploy", function() {
 
@@ -19,8 +20,8 @@ gulp.task("deploy", function() {
 	});
 
 	var headers = {
-    'Cache-Control': 'max-age=0, no-transform, public',
-		'Metadata' : {
+    "Cache-Control": "max-age=0, no-transform, public",
+		"Metadata" : {
 			"commit": process.env.CI_COMMIT_ID,
 			"build-url": process.env.CI_BUILD_URL,
 			"build-number": process.env.CI_BUILD_NUMBER,
@@ -31,22 +32,13 @@ gulp.task("deploy", function() {
 		}
   };
 
-  return gulp.src(['./dist/*'])
-     // gzip, Set Content-Encoding headers and add .gz extension
-    // .pipe(awspublish.gzip({ ext: '.gz' }))
-
-    // publisher will add Content-Length, Content-Type and headers specified above
-    // If not specified it will set x-amz-acl to public-read by default
+  return gulp.src(["./dist/*"])
+		.pipe(rename(function(path) {
+        path.dirname += "/" + config.s3URI;
+    }))
     .pipe(publisher.publish(headers))
-
-    // create a cache file to speed up consecutive uploads
-    // .pipe(publisher.cache())
-
-     // print upload updates to console
     .pipe(s3.reporter());
 });
-
-
 
 gulp.task("html", function() {
   return gulp.src("./*.html")
