@@ -1,0 +1,67 @@
+{
+    "File": {
+        "ID": "83c8ebbd-bf5d-b665-dccf-bdfe1b93c8e8",
+        "Path": "/home/benlynch/src/sandbox-app-login/Appfile",
+        "Source": "",
+        "Application": {
+            "Name": "sandbox-app-login",
+            "Type": "node",
+            "Dependencies": null
+        },
+        "Project": {
+            "Name": "sandbox-app-login",
+            "Infrastructure": "sandbox-app-login"
+        },
+        "Infrastructure": [
+            {
+                "Name": "sandbox-app-login",
+                "Type": "aws",
+                "Flavor": "simple",
+                "Foundations": [
+                    {
+                        "Name": "consul",
+                        "Config": null
+                    }
+                ]
+            }
+        ],
+        "Customization": null,
+        "Imports": null
+    },
+    "Vertices": [
+        {
+            "File": {
+                "ID": "83c8ebbd-bf5d-b665-dccf-bdfe1b93c8e8",
+                "Path": "/home/benlynch/src/sandbox-app-login/Appfile",
+                "Source": "",
+                "Application": {
+                    "Name": "sandbox-app-login",
+                    "Type": "node",
+                    "Dependencies": null
+                },
+                "Project": {
+                    "Name": "sandbox-app-login",
+                    "Infrastructure": "sandbox-app-login"
+                },
+                "Infrastructure": [
+                    {
+                        "Name": "sandbox-app-login",
+                        "Type": "aws",
+                        "Flavor": "simple",
+                        "Foundations": [
+                            {
+                                "Name": "consul",
+                                "Config": null
+                            }
+                        ]
+                    }
+                ],
+                "Customization": null,
+                "Imports": null
+            },
+            "Dir": "",
+            "NameValue": "sandbox-app-login"
+        }
+    ],
+    "Edges": []
+}
